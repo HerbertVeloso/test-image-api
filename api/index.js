@@ -1,16 +1,11 @@
+import cors from 'cors';
 import express from 'express';
 import fetch from 'node-fetch';
 
 const app = express()
 const port = 4000
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-
-  next();
-});
+app.use(cors);
 app.use(express.json());
 
 app.post('/', async (req, res) => {
