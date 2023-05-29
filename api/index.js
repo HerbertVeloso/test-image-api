@@ -16,7 +16,7 @@ app.post('/', async (req, res) => {
   const stringifiedBuffer = Buffer.from(buffer).toString('base64');
   const contentType = imageUrlData.headers.get('content-type');
   const imageBase64 = `data:${contentType};base64,${stringifiedBuffer}`;
-  res.send(imageBase64);
+  res.json({ image: imageBase64 });
 })
 
 app.listen(port, () => {
