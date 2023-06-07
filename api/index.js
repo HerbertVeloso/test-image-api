@@ -5,11 +5,7 @@ import fetch from 'node-fetch';
 const app = express()
 const port = 4000
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.post('/', async (req, res) => {
